@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Lab Test Results</title>
+</head>
+<body>
+    <h2>Input Lab Test Results</h2>
+    <form method="POST" action="/input_lab_results">
+        <label for="patient_test_id">Test:</label><br>
+        <select id="patient_test_id" name="patient_test_id">
+            {% for test in patient_tests %}
+                <option value="{{ test[0] }}">Test {{ test[0] }} for Patient {{ test[1] }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="result">Result:</label><br>
+        <textarea id="result" name="result"></textarea><br><br>
+
+        <input type="submit" value="Submit Result">
+    </form>
+</body>
+</html>
